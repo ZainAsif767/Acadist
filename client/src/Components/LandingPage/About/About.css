@@ -1,0 +1,38 @@
+.what-container {
+    max-width: 50%;
+    padding-left: 40px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.what-text {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+
+
+ul {
+    font-family: 'karla';
+    list-style: disc;
+    padding: 0;
+    margin: 0 auto;
+    /* center the list horizontally */
+    max-width: 600px;
+    /* set a maximum width for the list */
+}
+
+li {
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* add some spacing between list items */
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+li::marker {
+    color: #090979;
+    font-size: 1rem;
+}
