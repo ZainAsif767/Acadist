@@ -4,7 +4,7 @@ This repository contains a database project for a Learning Management System (LM
 
 ## Installation
 
-Clone the repository: ```git clone <https://github.com/MuhammadAmas/LMS.git>```\
+Clone the repository: ```git clone https://github.com/ZainAsif767/Acadist.git```\
 Change to the project directory: ```cd LMS```\
 Install dependencies for the client:
 
