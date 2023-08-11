@@ -1,11 +1,11 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
+import './testimonials.css';
 import {
     Avatar,
     Box,
     chakra,
-    Container,
     Flex,
-    Icon,
     SimpleGrid,
     useColorModeValue,
 } from '@chakra-ui/react';
@@ -55,8 +55,30 @@ const backgrounds = [
 
 function TestimonialCard(props) {
     const { name, role, content, avatar, index } = props;
+    const [animateCards, setAnimateCards] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const testimonialsSection = document.getElementById('testimonialsSection');
+            if (testimonialsSection) {
+                const rect = testimonialsSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top <= windowHeight * 0.75) {
+                    setAnimateCards(true);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    const animations = ['animate-from-right', 'animate-from-left', 'animate-from-bottom', 'animate-from-top'];
+    const animationClass = animateCards ? animations[index % animations.length] : '' ;
     return (
         <Flex
+            id={'testimonialsSection'}
             boxShadow={'lg'}
             maxW={'640px'}
             direction={{ base: 'column-reverse', md: 'row' }}
@@ -66,6 +88,10 @@ function TestimonialCard(props) {
             justifyContent={'space-between'}
             position={'relative'}
             bg={useColorModeValue('white', 'gray.800')}
+            css={{
+                animation: animateCards ? `slideInFromRight 1s ease-out, ${animationClass} 1s ease-out` : 'none',
+                animationFillMode: 'both',
+             }}
             _after={{
                 content: '""',
                 position: 'absolute',
@@ -124,7 +150,29 @@ function TestimonialCard(props) {
     );
 }
 
-export default function GridBlurredBackdrop() {
+export default function GridBlurredBackdrop(props) {
+    const { index } = props;
+    const [animateCards, setAnimateCards] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const testimonialsSection = document.getElementById('testimonialsSection');
+            if (testimonialsSection) {
+                const rect = testimonialsSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top <= windowHeight * 0.75) {
+                    setAnimateCards(true);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    const animations = ['animate-from-right', 'animate-from-left', 'animate-from-bottom', 'animate-from-top'];
+    const animationClass = animateCards ? animations[index % animations.length] : '' ;
     return (
         <Flex
             textAlign={'center'}
@@ -134,15 +182,19 @@ export default function GridBlurredBackdrop() {
             width={'full'}
             overflow={'hidden'}>
             <Box
-                // width={{ base: 'full', sm: 'xl', lg: 'xxl' }} 
+                id={'testimonialsSection'}
                 lineHeight={1.1}
                 margin={'auto'}>
                 <chakra.h3
-                    // fontFamily={'Work Sans'}
                     fontWeight={'bold'}
                     fontSize={50}
                     textTransform={'uppercase'}
-                    color={'var(--darkBlue)'}>
+                    color={'var(--darkBlue)'}
+                    css={{
+                animation: animateCards ? `fadeInUp 0.8s ease-out, ${animationClass} 1s ease-out` : 'none',
+                animationFillMode: 'both',
+             }}
+                    >
                     People love us
                 </chakra.h3>
                 <chakra.h1
