@@ -2,6 +2,9 @@
 
 This repository contains a database project for a Learning Management System (LMS) built using React.js, Express.js, PostgreSQL, and Chakra UI.
 
+https://github.com/ZainAsif767/Acadist/assets/98703238/9149a494-98c5-43b7-a249-b5fdba7b563c
+
+
 ## Installation
 
 Clone the repository: ```git clone https://github.com/ZainAsif767/Acadist.git```\
