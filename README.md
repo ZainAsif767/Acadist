@@ -48,7 +48,7 @@ cd client
 npm run dev
 ```
 
-Access the LMS application in your browser.
+You can access the LMS application in your browser.
 
 ## Project Structure
 
