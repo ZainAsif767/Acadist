@@ -68,7 +68,7 @@ You can access the LMS application in your browser.
 
 ## Collaborators
 
-This project was developed by the following collaborators:
+The following collaborators developed this project:
 
 - **[Muhammad Amas](https://github.com/MuhammadAmas)**
 - **[Zain Asif](https://github.com/ZainAsif767)**
