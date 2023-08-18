@@ -23,7 +23,7 @@ cd server
 npm install
 ```
 
-Create a PostgreSQL database for the LMS. Checkout the [Schema.sql](https://github.com/MuhammadAmas/LMS/blob/main/server/schema.sql) file.\
+Create a PostgreSQL database for the LMS. Check out the [Schema.sql](https://github.com/MuhammadAmas/LMS/blob/main/server/schema.sql) file.\
 Set up the database connection by creating the `.env` configuration file in the server directory with your PostgreSQL credentials. It must include the following:
 
 ```
