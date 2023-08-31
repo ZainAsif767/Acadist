@@ -1,4 +1,4 @@
-# Acadist a LMS Database Project
+# Acadist a Database Project
 
 This repository contains a database project for a Learning Management System (LMS) built using React.js, Express.js, PostgreSQL, and Chakra UI.
 
